@@ -411,6 +411,14 @@ Please be careful making any decisions based on this report.
     //this function runs the JQL query in $('#query') with parameters matching the values of the dropdowns
     function runQuery() {
 
+
+      //resize dropdowns
+      $('.select_button:not(#eventSelect > .select_button, #propSelect > .select_button, #startEventSelect > .select_button, #peoplePropSelect > .select_button)').addClass('small');
+      $('.select_menu:not(#eventSelect > .select_menu, #propSelect > .select_menu, #startEventSelect > .select_menu, #peoplePropSelect > .select_menu)').addClass('small');
+      $('#numResultsSelect, #minLengthSelect, #timeSelect, #unitSelect, #maxLengthSelect').css({'display': 'inline-block', 'max-width': '50px'})
+    
+
+
       //grab parameter values from dropdowns
       var params = {
           'fromDate': dateSelect.MPDatepicker('value').from.toISOString().slice(0, -14), //transform the date so it's in YYYY-MM-DD format
